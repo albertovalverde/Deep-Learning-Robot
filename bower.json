@@ -1,0 +1,19 @@
+{
+  "name": "GruntProjectBoilerplate",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "latest",
+    "requirejs": "latest",
+    "jquery": "~1.10.*",
+    "EaselJS": "^0.8.2",
+    "SoundJS": "0.6.0",
+    "TweenJS": "0.6.2",
+    "PreloadJS": "0.6.2",
+    "annyang": "^2.2.1",
+    "speak.js": "0.0.2",
+    "tracking": "tracking.js#^1.1.2",
+    "stats.js": "*",
+    "headtrackr": "*",
+    "twilio": "^1.1.0"
+  }
+}

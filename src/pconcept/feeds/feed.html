@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+    google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://feeds.abcnews.com/abcnews/topstories");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+              
+            try{
+            var img = result.feed.entries[i].mediaGroups[0].contents[0].thumbnails[0];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(img.url));
+            container.appendChild(div);                
+                var img2 = new Image();  
+                img2.onload = function() {
+                  div.appendChild(img2);
+                };
+                img2.src = img.url;                
+            }
+              catch(err){
+                  
+                  }            
+             
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="feed"></div>
+  </body>
+</html>
