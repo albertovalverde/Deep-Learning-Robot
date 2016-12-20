@@ -1,4 +1,4 @@
-# Aavaes-Robot-Software-project-Plan
+# Aavaes-Robot-Software-Project-Plan
 
 ## Robot User interface and Digital Signage application for commercial purposes.
 * Tablet app to guide the user to download mobile app on phone and subsequent setup procedures
