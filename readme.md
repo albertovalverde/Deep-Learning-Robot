@@ -5,6 +5,10 @@
 * iOS app
 * GUI to control base movement
 
+## Digital Signage application for commercial purposes.
+* Node.js
+* Html5, CSS3 and javascript
+
 ## Navigation & Obstacle Avoidance
 * This makes the robot to be able to go to a specified goal.
 * We will leverage ROS navigation stack,
