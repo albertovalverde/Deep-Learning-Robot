@@ -1,6 +1,6 @@
 # Aavaes-Robot-Software-project-Plan
 
-## Robot User intrface and Digital Signage application for commercial purposes.
+## Robot User interface and Digital Signage application for commercial purposes.
 * Tablet app to guide the user to download mobile app on phone and subsequent setup procedures
 * User uses mobile app to connect to robot via BT and provisioning WiFi configurations to the robot (Tablet & ROS board)
 * Digital Signage player:
@@ -11,6 +11,10 @@
 * Android app
 * iOS app
 * GUI to control base movement
+
+## Content Manager Platform to manage Digital Signage player
+* Server (API) Express.js
+* Frontend Angular.js + react.js
 
 ## Navigation & Obstacle Avoidance
 * This makes the robot to be able to go to a specified goal.
