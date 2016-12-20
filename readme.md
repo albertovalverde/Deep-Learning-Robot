@@ -6,15 +6,15 @@
 * Digital Signage player:
  * Node.js
  * Html5, CSS3 and javascript
+ 
+## Content Manager Platform to manage Digital Signage player
+* Server (API) Express.js
+* Frontend Angular.js + react.js
 
 ## Control by Mobile App
 * Android app
 * iOS app
 * GUI to control base movement
-
-## Content Manager Platform to manage Digital Signage player
-* Server (API) Express.js
-* Frontend Angular.js + react.js
 
 ## Navigation & Obstacle Avoidance
 * This makes the robot to be able to go to a specified goal.
