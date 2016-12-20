@@ -39,10 +39,10 @@
 * The robot also must be able to recognize several specific objects, e.g., cups, bowls, door knob ...etc
 * Must be able to measure relative positions between the object and the robot.
 
-## Proof of concept: 
-* https://www.youtube.com/watch?v=gLMsUSmbo7M
-* https://www.youtube.com/watch?v=UH02ASIJ9gw&t=39s
-* https://www.youtube.com/watch?v=KvmkGbMgvaU
+* Proof of concept: 
+  * https://www.youtube.com/watch?v=gLMsUSmbo7M
+  * https://www.youtube.com/watch?v=UH02ASIJ9gw&t=39s
+  * https://www.youtube.com/watch?v=KvmkGbMgvaU
 
 
 ## Auto Docking
