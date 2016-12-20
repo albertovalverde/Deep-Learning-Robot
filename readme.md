@@ -7,7 +7,7 @@
  * Node.js
  * Html5, CSS3 and javascript
  
-## Content Manager Platform to manage Digital Signage player
+## Content management platform for Digital Signage funtionallity
 * Server (API) Express.js
 * Frontend Angular.js + react.js
 
