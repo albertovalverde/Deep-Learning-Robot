@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" dur="indefinite" height="100%" viewBox="0 0 1280 720" viewport-fill="black" width="100%">
+  <script xlink:href="jSignage.js" />
+  <script xlink:href="all.js" />
+  <script xlink:href="moment.min.js" />
+   <script xlink:href="moment-timezone-with-data.min.js" />  
+   
+  <script><![CDATA[
+
+   
+
+ ]]></script>
+</svg>
+

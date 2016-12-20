@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type='text/javascript' src='flogin.js'></script>    
+  </head>
+  <body>
+      
+<!--      <button onclick="myFacebookLogin()">Login with Facebook</button>-->
+      
+      
+  </body>
+</html>
+
+<script>
+// Only works after `FB.init` is called
+/*function myFacebookLogin() {
+  //FB.login(function(){}, {scope: 'read_stream'});
+    FB.login(function(){}, {scope: 'read_stream, publish_actions'});
+}*/
+</script>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '551284361707406',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+      
+      FB.login(function(){
+  // Note: The call will only work if you accept the permission request
+ // FB.api('/me/feed', 'post', {message: 'Hello, world from Robot'});
+          
+ 
+    //      FB.api('/me/feed', 'post', {message: 'Hello, world from Robot'});
+          
+  FB.api('/me/feed', 'get', function(response) {
+  console.log(response);
+});  
+          
+//           FB.api('me/photos', 'get', function(response) {
+//  console.log(response);
+//               
+//               
+//});  
+//      
+          
+          
+  FB.api(
+    "/me/taggable_friends",
+    function (response) {
+        console.log(response);
+         console.log(response.length);
+        
+          for (var i=0, l=response.length; i<l; i++) {
+    var post = response[i];
+               alert('Message1: ' + post);
+    if (post.id) {
+      alert('Message2: ' + post.id);
+    
+    }
+  }
+        
+        
+        
+      if (response && !response.error) {
+        /* handle the result */
+      }
+    }
+);
+          
+        
+          
+     
+
+          
+          
+}, {scope: 'user_friends, user_photos, user_posts, publish_actions'});
+      
+   
+      
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>

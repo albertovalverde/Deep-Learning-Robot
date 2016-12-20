@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js"> <!--<![endif]-->
+
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>meet aavaes robot</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	
+	
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/skeleton.css"/>
+	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/retina.css"/>
+	
+
+		
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+	
+	
+        
+        <!--User interface-->
+        <script src="js/vendor/easeljs-0.8.2.min.js"></script>
+        <script src="js/vendor/tweenjs-0.6.2.min.js"></script>
+        
+        <!--Voice-->
+        <script src="js/vendor/annyang.min.js"></script>
+        <script src="js/vendor/speakClient.js"></script>
+        <script src="js/vendor/mespeak.js"></script>
+        <script src="js/vendor/stats.min.js"></script>
+        <script src="js/vendor/headtrackr.min.js"></script>
+    
+        <!--tracking head-->
+   
+    
+      <!--  <script src="js/vendor/require.js" data-main="js/app"></script>-->
+    
+        <!--theme-->
+        <script type="text/javascript" src="js/theme/jquery.js"></script>	
+        <script type="text/javascript" src="js/theme/modernizr.custom.js"></script> 
+        <script type="text/javascript" src="js/theme/royal_preloader.min.js"></script>
+        <script type="text/javascript" src="js/theme/jquery.easing.js"></script>	
+        <script type="text/javascript" src="js/theme/retina-1.1.0.min.js"></script> 
+        <script type="text/javascript" src="js/theme/scroll.js"></script> 
+        <script type="text/javascript" src="js/theme/jquery.fitvids.js"></script>
+        <!-- <script type="text/javascript" src="robot/js/app/main.js"></script>-->
+
+	
+</head>
+<body class="royal_loader">	
+ 
+    <script src="js/vendor/require.js" data-main="js/app"></script>
+   
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+
+	
+	<!-- PROJECT SECTION
+    ================================================== -->
+
+	
+	<div class="project-single-wrapper" style="padding-top:40px"
+
+		<div class="project-top-text">
+            <div class="container">
+                <h5> Welcome to Aavaes Robot</h5>	
+                 <div class="line-text"></div>
+                <div id="data" class="subtext-content"></div>
+            </div>
+			
+			<div class="container">
+				<div class="six columns">
+				   
+					
+                      <!--tracking-->
+                        <canvas id="compare" width="320" height="240" style="display:none"></canvas>
+                        <video id="vid" autoplay loop width="320" height="240"></video>
+                        <canvas id="overlay" width="320" height="240"></canvas>
+                        <canvas id="debug" width="320" height="240"></canvas>
+                        <p id='gUMMessage'></p>
+                        <p>Status : <span id='headtrackerMessage'></span></p>
+                        <p><input type="button" onclick="main.htracker.stop();htracker.start();" value="reinitiate facedetection"></input>
+                        <br/><br/>
+                        <input type="checkbox" onclick="showProbabilityCanvas()" value="asdfasd"></input>Show probability-map</p>
+					  
+    
+				</div>	
+				<div class="six columns">
+					 <!--Pity Face-->
+                <canvas  id="canvas1" width="800" height="460" ></canvas>
+                 <!--Audio layer-->
+                <div id="audio"></div>	
+                
+				</div>		
+			</div>
+
+			
+		</div>
+		
+		<div class="clear"></div>
+
+               
+
+		
+		<div class="project-video-wrapper">
+			<div class="container">
+				<div class="sixteen columns">
+                   
+		
+				</div>	
+			</div>
+		</div>	
+
+		<div class="clear"></div>	
+		
+	</div>
+</div>
+ 
+
+			<div class="footer-wrap">
+				
+				<div class="container">
+					<div class="sixteen columns">
+						<img src="images/footer-logo.png" alt="" />
+					</div>
+				</div>
+				<div class="footer-social">	
+					<div class="container">
+						<div class="sixteen columns">
+							<a href="#" data-dummy="twitter">twitter</a>
+							<a href="#" data-dummy="github">github</a>
+							<a href="#" data-dummy="facebook">facebook</a>
+							<a href="#" data-dummy="google +">google +</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-credit">	
+					<div class="container">
+						<div class="sixteen columns">
+							<p>© All rights reserved. Made by <a href="https://aavaes.com" data-dummy="Aavaes Deep Design"><span>Aavaes Deep Design</span></a> in Madrid, Spain 2016</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	
+
+		
+	<script>
+        
+        var htracker = new headtrackr.Tracker({altVideo : {ogv : "./media/capture5.ogv", mp4 : "./media/capture5.mp4"}, calcAngles : true, ui : false, headPosition : false, debug : debugOverlay});
+			htracker.init(videoInput, canvasInput);
+			htracker.start();
+			
+        
+        function showProbabilityCanvas() {
+				var debugCanvas = document.getElementById('debug');
+				if (debugCanvas.style.display == 'none') {
+					debugCanvas.style.display = 'block';
+				} else {
+					debugCanvas.style.display = 'none';
+				}
+			}
+
+</script>
+
+
+<!-- End Document
+================================================== -->
+</body>
+
+<!-- JAVASCRIPT
+    ================================================== -->
+
+
+
+	
+<script type="text/javascript">
+(function($) { "use strict";
+            Royal_Preloader.config({
+                mode:           'logo', // 'number', "text" or "logo"
+                logo:           'images/logo1.png',
+                timeout:        0,
+                showInfo:       false,
+                opacity:        1,
+                background:     ['#FFFFFF']
+            });
+})(jQuery);
+</script>	
+
+<script type="text/javascript">
+(function($) { "use strict";
+	$(".container").fitVids();
+})(jQuery);
+</script>  
+    
+    
+
+
+</html>
