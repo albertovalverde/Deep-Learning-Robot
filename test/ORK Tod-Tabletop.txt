@@ -1,0 +1,148 @@
+******************INSTALACIÓN EN ROS INDIGO******************
+
+1.- Kinect ROS
+      
+      // Instalar el paquete libfreenect (OpenNi está descontinuado)
+      
+      sudo apt-get install ros-indigo-freenect-stack
+      
+      1.1.- Probar la comunicación con el kinect
+            
+            --> Inicializar el nodo para capturar imágenes
+                
+                roslaunch freenect_launch freenect.launch
+            
+            --> Visualizar las imágenes en RViz
+                
+                rosrun rviz rviz
+                
+      1.2.- Controlar el motor del kinect
+            
+            --> Instalar los paquetes necesarios
+                
+                sudo apt-get install ros-indigo-kinect-aux
+                
+            --> Correr el nodo de control del motor
+                
+                rosrun kinect_aux kinect_aux_node
+                
+            --> Ver el ángulo del kinect
+                
+                rostopic echo /cur_tilt_angle
+                
+            --> Mover el motor
+                (ángulo por defecto = -9.5, y el rango de 31 a -31)
+                
+                rostopic pub /tilt_angle std_msgs/Float64 -- -15
+                //Cambiar -15 por el ángulo deseado
+                
+*************************************************************
+
+2.- Object Recognition Kitchen usando xbox-kinect
+      
+      //Instalar ORK ROS, toda la información en:
+      http://wg-perception.github.io/object_recognition_core/quickguide.html#quickguide
+      
+      
+      //Instalar OpenNi
+      sudo apt-get install ros-indigo-openni-camera
+      sudo apt-get install ros-indigo-openni-launch
+      
+      
+      //Instalar driver del kinect (SensorKinect)
+      cd ~
+      git clone git://github.com/ph4m/SensorKinect.git
+      cd ~/SensorKinect/Platform/Linux/CreateRedist
+      ./RedistMaker
+      cd ~/SensorKinect/Platform/Linux/Redist/Sensor-Bin-Linux-x64-v*
+      sudo ./install.sh
+      
+      
+      //Instalar componentes para detección y aprendizaje de objetos
+      sudo apt-get install ros-indigo-object-recognition-core
+      sudo apt-get install ros-indigo-object-recognition-msgs
+      sudo apt-get install ros-indigo-object-recognition-ros
+      sudo apt-get install ros-indigo-object-recognition-ros-visualization
+      sudo apt-get install ros-indigo-object-recognition-capture
+      sudo apt-get install ros-indigo-object-recognition-reconstruction
+      sudo apt-get install ros-indigo-object-recognition-tabletop
+      sudo apt-get install ros-indigo-object-recognition-linemod
+      sudo apt-get install ros-indigo-object-recognition-tod
+      sudo apt-get install ros-indigo-object-recognition-transparent-objects
+      
+      
+      //Instalar la base de datos donde se guardarán los modelos
+      sudo apt-get install couchdb
+      
+      //Probar base de datos. Arrojará la versión de couchdb
+      sudo apt-get install curl
+      
+      //Crear la estructura para la visualización en la base de datos
+      sudo apt-get install python-pip
+      sudo pip install -U couchapp
+      rosrun object_recognition_core push.sh
+      
+      //Los objetos en la base de datos se pueden ver en:
+      http://localhost:5984/or_web_ui/_design/viewer/index.html
+      
+      
+      2.1.- Capturar un nuevo objeto a la base de datos
+            
+            --> Usando un tablero de referencia
+                
+                //En esta página puedes ver más información
+                http://wg-perception.github.io/capture/#setup
+                
+                ***SOLO CORRER ROSCORE (NO CORRER OPENNI)***
+                
+                //Descargar el tablero de referencia:
+                http://wg-perception.github.io/capture/_downloads/capture_board_big_5x3.svg.pdf
+                
+                rosrun object_recognition_capture capture --seg_z_min 0.01 -o objeto.bag --preview
+                
+                //Borrar --preview del comando anterior para realizar captura definitiva del objeto. Crear una carpeta donde se guardarán los modelos (.bag) y situarse en ella antes de ejecutar la captura del objeto.
+                
+                2.1.1.-Subir el objeto (.bag) a la base de datos
+                       
+                     --> Generar el ID del objeto
+                       
+                       rosrun object_recognition_capture upload -a 'Autor del Modelo' -e 'correo del autor' -i nombredelmodelo.bag -n 'nombre' -d 'Descripción del objeto' --commit
+                       **Esta opción devuelve un ID que usaremos para crear la malla del objeto.
+                       
+                     --> Crear la malla del objeto
+                         
+                         rosrun object_recognition_reconstruction mesh_object --all --visualize --commit
+                         
+                2.1.2.-Subir un modelo ya existente
+                     
+                         rosrun object_recognition_core object_add.py -n "objeto" -d "descripción" --commit
+                         **Esta opción devuelve el ID del objeto.
+                         
+                         rosrun object_recognition_core mesh_add.py <ID del objeto> <ruta del modelo/objeto.stl> --commit
+                         //ejemplo:
+                         rosrun object_recognition_core mesh_add.py 23a19f986632d3f9365ed47dc80007b9 ~/catkin_ws/src/tutorials/data/coke.stl --commit
+                         
+                         2.1.2.1.- Descargar modelo de prueba
+                                   
+                                   git clone https://github.com/wg-perception/ork_tutorials
+                         
+                2.1.3.-Borrar un objeto de la base de datos
+                     
+                         rosrun object_recognition_core object_delete.py OBJECT_ID --commit
+                         
+*************************************************************
+
+3.-Iniciar reconocimiento de objetos
+      
+      roscore
+      roslaunch openni_launch openni.launch
+      rosrun dynamic_reconfigure dynparam set /camera/driver depth_registration True
+      rosrun dynamic_reconfigure dynparam set /camera/driver image_mode 2
+      rosrun dynamic_reconfigure dynparam set /camera/driver depth_mode 2
+      rosrun object_recognition_core training -c `rospack find object_recognition_tod`/conf/training.ork --visualize
+      rosrun topic_tools relay /camera/depth_registered/image_raw /camera/depth/image_raw
+      rosrun topic_tools relay /camera/rgb/image_rect_color /camera/rgb/image_raw
+      rosrun object_recognition_core detection -c `rospack find object_recognition_tod`/conf/detection.ros.ork --visualize
+      rosrun object_recognition_core detection -c  `rospack find object_recognition_tabletop`/conf/detection.object.ros.ork
+      rosrun rviz rviz
+      //Seleccionar Global/FixedFrame = camera_link; Add/OrkObject, Topic = recognized_object_array; Add/ PointCloud2, Topic = camera/ deep_registered/ points, PointCloud2/ ColorTransformer = RGB8
