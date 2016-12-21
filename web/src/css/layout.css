@@ -669,6 +669,9 @@ div.cs-skin-slide::before {
 .contact-background{
 	background-image:url('../images/6.jpg');
 }
+.robot-background{
+	background-image:url('../images/slide-1.jpg');
+}
 
 
 .big-text-pages { 
@@ -894,6 +897,9 @@ div.cs-skin-slide::before {
 .head-content-wrap-image-about{ 
 	background-image:url('../images/2.jpg');
 }  
+.head-content-wrap-image-robot{ 
+	background-image:url('../images/slide-1.jpg');
+} 
 .head-content-wrap h5{ 
 	color:#f4f4f4;
 	font-weight: 700;
