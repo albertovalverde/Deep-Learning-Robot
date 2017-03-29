@@ -51,9 +51,9 @@
 * Here is the proposed system architecture: 
 * All the intelligent modules will be on tablet or on ROS board.
 
-![](https://aavaes.com/wp-content/uploads/2017/03/architecture.png)
+![](http://aavaes.com/wp-content/uploads/2017/03/essilor-cognition-bloks.png)
 
-[Proposed Architecture](http://aavaes.com/wp-content/uploads/2017/03/architecture.png)
+[Proposed Architecture](http://aavaes.com/wp-content/uploads/2017/03/essilor-cognition-bloks.png)
 
 
 
