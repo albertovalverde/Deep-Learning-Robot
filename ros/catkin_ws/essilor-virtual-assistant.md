@@ -1,7 +1,7 @@
-# Aavaes-virtual assistant_optician_assistant-Software-Development-Plan
+# Aavaes-virtual-assistant-software-development-plan
 
 # Introduction
-* This document describes on-shop virtual_optician_assistant-Software module list and development plan.
+* This document describes on-shop virtual-assistant-software module list and development plan.
 * The virtual assistant is not designed or intended to replace human beings, which helps to contribute to his integration. 
 
 # Features:
@@ -10,7 +10,7 @@
 * ENTERTAINING. The virtual assistant offers a truly unusual customer experience. Benefits: increasing footfall, boosting brand affinity.
 * GUIDING. The virtual assistant can guide towards locations, services or products, and help people to find what they’re looking for. Benefits: reducing staff workload, personalised services, improved management and sales tracking.
 * VISION TEST. The virtual assistant is able to test customer vision. https://www.essilor.com/en/vision-tests/test-your-vision/
-* OPTICIAN ASSISTANT. The virtual assistant quickly captures photos and/or videos of the patient wearing their chosen frame(s) and provides simple on-screen review tools to assist them in making a final decision. https://itunes.apple.com/us/app/idispense/id857740969?mt=8
+* OPTICIAN ASSISTANT. The virtual assistant quickly captures photos and/or videos of the patient wearing their chosen frame(s) and provides simple on-screen review tools to assist them in making a final decision. https://itunes.apple.com/us/app/idispense/id857740969?mt=8 or http://www.ray-ban.com/spain/virtual-model
 * INFORMING AND RECOMMENDING PRODUCTS. The virtual assistant is able to inform and offer recommendations about products and services. virtual assistant can participate in loyalty programmes. It recommends products and services in a personalised manner, adapted to the customer's profiles and purchasing history. Benefits: harmonising the cross/omni-channel experience, assisting sales and sales teams, boosting sales, improved management and sales tracking.
 * VIRTUAL REALITY INTEGRATION. The virtual assistant is ready to integrate with VR project for human virtual assistant interaction that allows any lens wearer to experience the benefits of their new spectacle lenses before ordering then. https://www.youtube.com/watch?v=oOdTWCwf9lg
 * IMPROVING CUSTOMER KNOWLEDGE - AI IN BUSINESS. The virtual assistant can measure customer satisfaction, study customer opinions in the form of satisfaction indexes or verbatim audio or text in response to open and closed questions. The virtual assistant is able to refine the analysis of these opinions thanks to customer data such as gender, age or mood. Benefits: quality and reliability of data, deeper knowledge of the customers, storage and analysis of data in real time.
@@ -19,10 +19,8 @@
 # High-Level User Scenarios
 
 ## Open Box
-* Tablet app say hello to the world and guide the user to download mobile app on phone and subsequent setup procedures
-* User uses mobile app to connect to virtual assistant via BT and provisioning WiFi configurations to Aavaes-virtual assistant_optician_assistant (Tablet & ROS board)
-* User uses mobile app to command the virtual assistant's base movement
-* User uses mobile app to command the virtual assistant's arms movement 
+* Kiosk app say hello to the world and guide the user to setup configuration
+* User connect to virtual assistant via WiFi configurations to Aavaes-virtual assistant_optician_assistant
 
 ## Auto-Upgrade OTA(over the air)
 * Tablet as GUI 
@@ -33,8 +31,7 @@
 * Open Box app on kiosk
 
 ## Auto-Upgrade OTA 
-* Remotely auto-upgrade app on Tablet
-* Remotely auto-upgrade app on ROS board
+* Remotely auto-upgrade app on Kiosk
 * Remotely auto-upgrade firmware on Arduino boards
 * Auto-Upgrade server on AWS and web GUI for operation
 * Each virtual assistant will be assigned an unique "virtual assistantId"
@@ -49,14 +46,13 @@
 [Proposed Architecture](http://aavaes.com/wp-content/uploads/2017/03/essilor-cognition-bloks.png)
 
 
-
 # Software Modules to be developed
 ## Server Backend. FullRest API for business logic. Digital signage management and Business intelligence.
 * Node.js, 
 * Express 
 * MongoDB
 
-## App for the tablet for user interface & rich user experience. Vision test, optician assistant, informing and recommending product, virtual reality, etc
+## App for the tablet for user interface & rich user experience. Vision test, optician assistant, informing and recommending product, virtual reality, varilux x series, etc
  * Node.js
  * Html5, CSS3 and JavaScript. Angular.js and React.js	
 
