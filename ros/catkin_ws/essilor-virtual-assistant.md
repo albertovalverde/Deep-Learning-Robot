@@ -41,9 +41,9 @@
 * Here is the proposed system architecture: 
 * All the intelligent modules will be on kiosk board.
 
-![](http://aavaes.com/wp-content/uploads/2017/03/essilor-cognition-bloks.png)
+![](http://aavaes.com/wp-content/uploads/2017/04/avatar_diagram.png)
 
-[Proposed Architecture](http://aavaes.com/wp-content/uploads/2017/03/essilor-cognition-bloks.png)
+[Proposed Architecture](http://aavaes.com/wp-content/uploads/2017/04/avatar_diagram.png)
 
 
 # Software Modules to be developed
