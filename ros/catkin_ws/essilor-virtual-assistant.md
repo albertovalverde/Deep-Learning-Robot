@@ -71,8 +71,7 @@
 * The virtual assistant should be able to recognized "who" so that it can try to close to the "right" person.
 * We can leverage OpenCV template matching by present face images
  * Refer to: http://docs.opencv.org/doc/tutorials/imgproc/histograms/template_matching/template_matching.html
-* The virtual assistant also must be able to recognize several specific objects, e.g., frames, VR glasses, door knob ...etc
-* Must be able to measure relative positions between the object and the virtual assistant.
+* Must be able to measure relative positions between the customer and the virtual assistant kiosk.
 
 * Proof of concept: 
   * https://www.youtube.com/watch?v=gLMsUSmbo7M
