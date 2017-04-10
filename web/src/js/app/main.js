@@ -237,7 +237,7 @@ module.exports.sendSms = function(to, message) {
 			
 			// the face tracking setup
 			
-			var htracker = new headtrackr.Tracker({altVideo : {ogv : "/robot/videos/luxilor_assistant.mov", mp4 : "/robot/media/face.mp4"}, calcAngles : true, ui : false, headPosition : false, debug : debugOverlay});
+			var htracker = new headtrackr.Tracker({altVideo : {ogv : "/robot/media/face.mp4", mp4 : "/robot/media/face.mp4"}, calcAngles : true, ui : false, headPosition : false, debug : debugOverlay});
 			htracker.init(videoInput, canvasInput);
 			htracker.start();
 			
