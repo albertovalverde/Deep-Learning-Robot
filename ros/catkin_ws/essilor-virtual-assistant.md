@@ -1,7 +1,9 @@
-# Aavaes-virtual-assistant-software-development-plan
+# Essilor-virtual-assistant-software-development-plan
 
 # Introduction
 * This document describes on-shop virtual-assistant-software module list and development plan.
+* Essilor virtual assistant (LUXILOR) is a conversational, computer-generated character that simulates a conversation to deliver voice- or text-based information to a customer via kiosk interface.
+* The virtual assistant uses AI-powered voice biometrics and face recognition to confirm the identity of the customers by the sound of their voice and/or their face.
 * The virtual assistant is not designed or intended to replace human beings, which helps to contribute to his integration. 
 
 # Features:
@@ -20,7 +22,8 @@
 
 ## Open Box
 * Kiosk app say hello to the world and guide the user to setup configuration
-* User connect to virtual assistant via WiFi configurations to Aavaes-virtual assistant_optician_assistant
+* User connect to virtual assistant via WiFi configurations to Essilor-virtual assistant_optician_assistant
+* Echo Alexa configuration.
 
 ## Auto-Upgrade OTA(over the air)
 * Tablet as GUI 
@@ -48,16 +51,23 @@
 
 # Software Modules to be developed
 ## Server Backend. FullRest API for business logic. Digital signage management and Business intelligence.
-* Node.js, 
+* Node.js 
 * Express 
 * MongoDB
+* Alexa Services
 
-## App for the tablet for user interface & rich user experience. Vision test, optician assistant, informing and recommending product, virtual reality, varilux x series, etc
+## App for user interface & rich user experience. Vision test, optician assistant, informing and recommending product, virtual reality, varilux x series, etc
  * Node.js
- * Html5, CSS3 and JavaScript. Angular.js and React.js	
+ * Html5, CSS3 and JavaScript. Angular.js and React.js
+ * Alexa for node.js
+
+## Speech Interactions with Echo Alexa - Amazon
+* Echo Alexa
+* We can leverage several amazon's services
+ * https://developer.amazon.com/alexa-voice-service
 
 
-## Speech Interactions
+## Speech Interactions with Google
 * This is something like "Siri"
 * We can leverage several Android's services
  * https://developer.android.com/reference/android/service/voice/VoiceInteractionService.html
