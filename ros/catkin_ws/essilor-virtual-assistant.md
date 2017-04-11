@@ -23,7 +23,7 @@
 ## Open Box
 * Kiosk app say hello to the world and guide the user to setup configuration
 * User connect to virtual assistant via WiFi configurations to Essilor-virtual assistant_optician_assistant
-* Echo Alexa configuration.
+* Speech recognition configuration.
 
 ## Auto-Upgrade OTA(over the air)
 * Tablet as GUI 
