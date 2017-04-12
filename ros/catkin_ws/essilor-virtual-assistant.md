@@ -58,6 +58,7 @@
  * Html5, CSS3 and JavaScript. Angular.js and React.js
  
 ## Speech Interactions Options
+* This is something like "Siri"
  
 ### Speech Interactions with node.js
 * https://syl22-00.github.io/pocketsphinx.js/
@@ -69,7 +70,6 @@
  * https://developer.amazon.com/alexa-voice-service
 
 ### Speech Interactions with Google
-* This is something like "Siri"
 * We can leverage several Android's services
  * https://developer.android.com/reference/android/service/voice/VoiceInteractionService.html
  * http://developer.android.com/reference/android/speech/SpeechRecognizer.html
