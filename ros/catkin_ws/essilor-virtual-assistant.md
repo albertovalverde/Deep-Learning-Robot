@@ -2,8 +2,9 @@
 
 # Introduction
 * This document describes on-shop virtual-assistant-software module list and development plan.
-* Essilor virtual assistant (LUXILOR) is a conversational, computer-generated character that simulates a conversation to deliver voice- or text-based information to a customer via kiosk interface.
+* A Essilor virtual assistant (LUXILOR) is a conversational, gesture, touch, computer-generated character that simulates a conversation to deliver voice, media(rich contents) or text-based information to a customer via kiosk interface.
 * The virtual assistant uses AI-powered voice biometrics and face recognition to confirm the identity of the customers by the sound of their voice and/or their face.
+* The virtual assistant  incorporates speech recognition for natural-language processing, dialogue control, domain knowledge and a visual appearance (such as avatar animation) that changes according to the content and context of the dialogue. 
 * The virtual assistant is not designed or intended to replace human beings, which helps to contribute to his integration. 
 
 # Features:
@@ -23,7 +24,6 @@
 ## Open Box
 * Kiosk app say hello to the world and guide the user to setup configuration
 * User connect to virtual assistant via WiFi configurations to Essilor-virtual assistant_optician_assistant
-* Speech recognition configuration.
 
 ## Auto-Upgrade OTA(over the air)
 * Tablet as GUI 
@@ -35,8 +35,6 @@
 
 ## Auto-Upgrade OTA 
 * Remotely auto-upgrade app on Kiosk
-* Remotely auto-upgrade firmware on Arduino boards
-* Auto-Upgrade server on AWS and web GUI for operation
 * Each virtual assistant will be assigned an unique "virtual assistantId"
 * Upgrade by specified "virtual assistantId"
 
@@ -54,20 +52,23 @@
 * Node.js 
 * Express 
 * MongoDB
-* Alexa Services
 
 ## App for user interface & rich user experience. Vision test, optician assistant, informing and recommending product, virtual reality, varilux x series, etc
  * Node.js
  * Html5, CSS3 and JavaScript. Angular.js and React.js
- * Alexa for node.js
+ 
+## Speech Interactions Options
+ 
+### Speech Interactions with node.js
+* https://syl22-00.github.io/pocketsphinx.js/
 
-## Speech Interactions with Echo Alexa - Amazon
+
+### Speech Interactions with Echo Alexa - Amazon
 * Echo Alexa
 * We can leverage several amazon's services
  * https://developer.amazon.com/alexa-voice-service
 
-
-## Speech Interactions with Google
+### Speech Interactions with Google
 * This is something like "Siri"
 * We can leverage several Android's services
  * https://developer.android.com/reference/android/service/voice/VoiceInteractionService.html
