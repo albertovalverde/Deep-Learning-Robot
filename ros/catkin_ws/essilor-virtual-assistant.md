@@ -57,12 +57,10 @@
  * Node.js
  * Html5, CSS3 and JavaScript. Angular.js and React.js
  
-## Speech Interactions Options
-* This is something like "Siri"
+## Speech Interactions Options (This is something like "Siri")
  
 ### Speech Interactions with node.js
 * https://syl22-00.github.io/pocketsphinx.js/
-
 
 ### Speech Interactions with Echo Alexa - Amazon
 * Echo Alexa
