@@ -26,7 +26,6 @@
 * User connect to virtual assistant via WiFi configurations to Essilor-virtual assistant_optician_assistant
 
 ## Auto-Upgrade OTA(over the air)
-* Tablet as GUI 
 * virtual assistant automatically check for latest updates and download firmware in background
 * When firmware downloaded, prompt messages to user to confirm the upgrade execution
 
