@@ -1,5 +1,3 @@
-# Aavaes-Robot-Software-DEV-Plan
-
 ## Robot User interface and Digital Signage application for commercial purposes.
 * Tablet app to guide the user to download mobile app on phone and subsequent setup procedures
 * User uses mobile app to connect to robot via BT and provisioning WiFi configurations to the robot (Tablet & ROS board)
